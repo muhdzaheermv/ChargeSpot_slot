@@ -1,0 +1,44 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+
+    
+    <main class="main">
+
+        
+
+        <section class="featured section" id="featured">
+
+            
+            <div class="featured__container container">
+                
+                <section class="about section" id="about">
+                    <div class="about__container container grid">
+                        <div class="about__group">
+                            <img src={{ vendor.cover_image.url }} alt="about image" class="about__img">
+                            <div class="about__card">
+                                <h3 class="about__card-title">{{ vendor.contact }}</h3>
+                                <p class="about__card-description">{{ vendor.address }}</p>
+                            </div>
+                        </div>
+                        <div class="about__data">
+                            <h3 class="featured__subtitle">Since {{ vendor.date|date:"Y" }}</h3>
+                            <h2 class="section__title about__title">
+                                {{ vendor.title }}
+                            </h2>
+                            <p class="about__description">{{ vendor.description }}</p>
+                            <a href="#" class="button">See More</a>
+                        </div>
+                        
+                        
+                    </div>
+                </section>
+            </div>
+        </section>
+        
+        {% include "partials/stations_list.html" %} 
+    </main>
+    {% endblock content %}
